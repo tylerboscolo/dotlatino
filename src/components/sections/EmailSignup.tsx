@@ -43,7 +43,7 @@ export default function EmailSignup() {
   };
 
   return (
-    <section id="signup" ref={ref} className="relative z-10 py-24 md:py-32">
+    <section id="signup" ref={ref} className="relative z-10 py-24 md:py-32" style={{ background: 'linear-gradient(135deg, rgba(212,168,67,0.1) 0%, rgba(168,85,168,0.08) 50%, rgba(26,171,184,0.1) 100%)' }}>
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

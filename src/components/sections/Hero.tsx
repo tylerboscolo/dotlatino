@@ -41,6 +41,8 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark-mid/50 to-dark-teal/30 z-0" />
+      {/* Warm glow accent */}
+      <div className="absolute bottom-0 right-[10%] w-[500px] h-[500px] rounded-full pointer-events-none z-0" style={{ background: 'radial-gradient(circle, rgba(224,122,58,0.06) 0%, transparent 70%)' }} />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Eyebrow */}

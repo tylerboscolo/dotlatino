@@ -6,7 +6,7 @@
   --gold: #D4A843;
   --gold-light: #E8C96A;
   --gold-dark: #B8862E;
-  --teal: #1A9E8F;
+  --teal: #1AABB8;
   --teal-light: #2CC4B3;
   --teal-dark: #147A6E;
   --orange: #E07A3A;
@@ -15,9 +15,11 @@
   --purple-light: #A855A8;
   --magenta: #C44B8B;
   --bg-dark: #0D1B2A;
-  --bg-dark-mid: #132B3E;
-  --bg-teal-dark: #0A3D3D;
-  --bg-warm: #1A1A2E;
+  --bg-dark-mid: #0F2B3A;
+  --bg-teal-dark: #133B3E;
+  --bg-warm-mid: #1A3A35;
+  --bg-warm-dark: #2A2A28;
+  --bg-warm-bottom: #1E1A15;
   --white: #FAFAFA;
   --gray-100: #F0EDE8;
   --gray-400: #9CA3AF;
@@ -34,7 +36,15 @@ html {
 
 body {
   color: var(--text-primary);
-  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-dark-mid) 30%, var(--bg-teal-dark) 70%, var(--bg-dark) 100%);
+  background: linear-gradient(
+    180deg,
+    #0D1B2A 0%,
+    #0F2B3A 20%,
+    #133B3E 40%,
+    #1A3A35 60%,
+    #2A2A28 80%,
+    #1E1A15 100%
+  );
   background-attachment: fixed;
   font-family: var(--font-dm-sans), system-ui, sans-serif;
   min-height: 100vh;
@@ -55,13 +65,53 @@ body::before {
 /* Frosted glass card utility */
 @layer components {
   .glass-card {
-    @apply relative rounded-2xl border border-gold/15 backdrop-blur-md;
+    @apply relative rounded-2xl border border-white/10 backdrop-blur-md;
     background: rgba(255, 255, 255, 0.03);
   }
 
   .glass-card:hover {
     @apply border-gold/40;
   }
+}
+
+/* Section glow accents */
+.glow-magenta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(168, 85, 168, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.glow-orange::before {
+  content: '';
+  position: absolute;
+  top: 40%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(224, 122, 58, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.glow-teal::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(26, 171, 184, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
 }
 
 /* Reduced motion */

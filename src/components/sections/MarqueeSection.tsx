@@ -20,9 +20,9 @@ export default function MarqueeSection() {
           </span>
         ))}
       </MarqueeStrip>
-      <MarqueeStrip reverse className="bg-dark-warm/80 border-y border-white/5 py-3 mt-1">
+      <MarqueeStrip reverse className="bg-teal-dark/30 border-y border-teal/10 py-3 mt-1">
         {Array.from({ length: 8 }).map((_, i) => (
-          <span key={i} className="text-white/60 font-bold text-sm md:text-base tracking-wider px-2">
+          <span key={i} className="text-teal-400 font-bold text-sm md:text-base tracking-wider px-2">
             {strip2Text}{separator}
           </span>
         ))}

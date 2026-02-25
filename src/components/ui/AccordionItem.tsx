@@ -18,7 +18,7 @@ export default function AccordionItem({ question, answer }: AccordionItemProps) 
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-full py-5 text-left gap-4 group cursor-pointer"
       >
-        <span className="font-display text-lg text-neutral-white group-hover:text-gold-light transition-colors">
+        <span className="font-display text-lg text-neutral-white group-hover:text-teal-400 transition-colors">
           {question}
         </span>
         <motion.span
@@ -26,7 +26,7 @@ export default function AccordionItem({ question, answer }: AccordionItemProps) 
           transition={{ duration: 0.2 }}
           className="flex-shrink-0"
         >
-          <ChevronDown className="w-5 h-5 text-gold" />
+          <ChevronDown className="w-5 h-5 text-teal-400" />
         </motion.span>
       </button>
       <AnimatePresence initial={false}>

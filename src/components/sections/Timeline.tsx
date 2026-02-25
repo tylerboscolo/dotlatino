@@ -4,6 +4,13 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
 
+const dotColors = [
+  { bg: 'bg-amber-400', shadow: 'shadow-[0_0_20px_rgba(251,191,36,0.5)]', border: 'border-amber-400/30' },
+  { bg: 'bg-teal-400', shadow: 'shadow-[0_0_20px_rgba(45,212,191,0.5)]', border: 'border-teal-400/30' },
+  { bg: 'bg-orange-400', shadow: 'shadow-[0_0_20px_rgba(251,146,60,0.5)]', border: 'border-orange-400/30' },
+  { bg: 'bg-pink-500', shadow: 'shadow-[0_0_20px_rgba(236,72,153,0.5)]', border: 'border-pink-500/30' },
+];
+
 export default function Timeline() {
   const { t } = useLanguage();
   const ref = useRef<HTMLElement>(null);
@@ -38,7 +45,7 @@ export default function Timeline() {
         {/* Desktop horizontal timeline */}
         <div className="hidden md:block">
           <div className="relative">
-            <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-gold/20 via-gold/40 to-gold/20" />
+            <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-400/30 via-teal-400/40 via-60% to-pink-500/30" />
 
             <div className="grid grid-cols-4 gap-6">
               {phases.map((phase, i) => (
@@ -50,10 +57,10 @@ export default function Timeline() {
                   className="relative pt-16"
                 >
                   <div className="absolute top-[22px] left-1/2 -translate-x-1/2">
-                    <div className="w-4 h-4 rounded-full bg-gold shadow-[0_0_20px_rgba(212,168,67,0.5)]" />
+                    <div className={`w-4 h-4 rounded-full ${dotColors[i].bg} ${dotColors[i].shadow}`} />
                   </div>
 
-                  <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-gold/40 transition-all duration-300 text-center">
+                  <div className={`p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:${dotColors[i].border} transition-all duration-300 text-center`}>
                     <span className="text-gold text-xs font-bold uppercase tracking-wider">
                       {phase.label}
                     </span>
@@ -84,9 +91,9 @@ export default function Timeline() {
               className="flex gap-4"
             >
               <div className="flex flex-col items-center">
-                <div className="w-3 h-3 rounded-full bg-gold shadow-[0_0_15px_rgba(212,168,67,0.5)]" />
+                <div className={`w-3 h-3 rounded-full ${dotColors[i].bg} ${dotColors[i].shadow}`} />
                 {i < phases.length - 1 && (
-                  <div className="w-0.5 flex-1 bg-gold/20 mt-2" />
+                  <div className="w-0.5 flex-1 bg-gradient-to-b from-amber-400/20 to-pink-500/20 mt-2" />
                 )}
               </div>
               <div className="p-5 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex-1 mb-2">

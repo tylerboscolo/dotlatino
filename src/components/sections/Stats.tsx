@@ -4,6 +4,13 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
 
+const statColors = [
+  { text: 'text-amber-400', hover: 'hover:border-amber-400/40' },
+  { text: 'text-teal-400', hover: 'hover:border-teal-400/40' },
+  { text: 'text-orange-400', hover: 'hover:border-orange-400/40' },
+  { text: 'text-pink-500', hover: 'hover:border-pink-500/40' },
+];
+
 export default function Stats() {
   const { t } = useLanguage();
   const ref = useRef<HTMLElement>(null);
@@ -17,7 +24,7 @@ export default function Stats() {
   ];
 
   return (
-    <section ref={ref} className="relative z-10 py-24 md:py-32">
+    <section ref={ref} className="relative z-10 py-24 md:py-32 glow-magenta">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -35,9 +42,9 @@ export default function Stats() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-gold/40 transition-all duration-300 text-center"
+              className={`p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 ${statColors[i].hover} transition-all duration-300 text-center`}
             >
-              <div className="font-display text-5xl md:text-6xl text-gold-light">
+              <div className={`font-display text-5xl md:text-6xl ${statColors[i].text}`}>
                 {stat.value}
               </div>
               <p className="text-neutral-white text-lg font-semibold mt-3">

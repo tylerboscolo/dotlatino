@@ -5,7 +5,12 @@ import { useRef } from 'react';
 import { Store, Mic, Heart, Newspaper } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
-const icons = [Store, Mic, Heart, Newspaper];
+const cardStyles = [
+  { icon: Store, color: 'text-amber-400', bg: 'bg-amber-400/10', hover: 'hover:border-amber-400/40' },
+  { icon: Mic, color: 'text-pink-500', bg: 'bg-pink-500/10', hover: 'hover:border-pink-500/40' },
+  { icon: Heart, color: 'text-teal-400', bg: 'bg-teal-400/10', hover: 'hover:border-teal-400/40' },
+  { icon: Newspaper, color: 'text-orange-400', bg: 'bg-orange-400/10', hover: 'hover:border-orange-400/40' },
+];
 
 export default function WhoIsItFor() {
   const { t } = useLanguage();
@@ -20,7 +25,7 @@ export default function WhoIsItFor() {
   ];
 
   return (
-    <section id="who" ref={ref} className="relative z-10 py-24 md:py-32">
+    <section id="who" ref={ref} className="relative z-10 py-24 md:py-32 glow-orange">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -38,7 +43,7 @@ export default function WhoIsItFor() {
 
         <div className="space-y-12">
           {audiences.map((audience, i) => {
-            const Icon = icons[i];
+            const { icon: Icon, color, bg, hover } = cardStyles[i];
             const isReversed = i % 2 === 1;
 
             return (
@@ -47,12 +52,12 @@ export default function WhoIsItFor() {
                 initial={{ opacity: 0, x: isReversed ? 30 : -30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className={`p-8 md:p-10 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-gold/40 transition-all duration-300 flex flex-col md:flex-row items-start gap-6 ${
+                className={`p-8 md:p-10 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 ${hover} transition-all duration-300 flex flex-col md:flex-row items-start gap-6 ${
                   isReversed ? 'md:flex-row-reverse' : ''
                 }`}
               >
-                <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-8 h-8 text-gold" />
+                <div className={`w-16 h-16 rounded-2xl ${bg} flex items-center justify-center flex-shrink-0`}>
+                  <Icon className={`w-8 h-8 ${color}`} />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-display text-xl md:text-2xl font-bold text-neutral-white mb-3">

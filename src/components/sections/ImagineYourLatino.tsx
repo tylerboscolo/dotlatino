@@ -5,7 +5,14 @@ import { useRef } from 'react';
 import { User, ShoppingBag, Music, Heart, UtensilsCrossed, Briefcase } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
-const DOMAIN_ICONS = [User, ShoppingBag, Music, Heart, UtensilsCrossed, Briefcase];
+const DOMAIN_CARDS = [
+  { icon: User, domainColor: 'text-amber-400', hover: 'hover:border-amber-400/40' },
+  { icon: ShoppingBag, domainColor: 'text-teal-400', hover: 'hover:border-teal-400/40' },
+  { icon: Music, domainColor: 'text-pink-500', hover: 'hover:border-pink-500/40' },
+  { icon: Heart, domainColor: 'text-orange-400', hover: 'hover:border-orange-400/40' },
+  { icon: UtensilsCrossed, domainColor: 'text-teal-400', hover: 'hover:border-teal-400/40' },
+  { icon: Briefcase, domainColor: 'text-amber-400', hover: 'hover:border-amber-400/40' },
+];
 
 export default function ImagineYourLatino() {
   const { t } = useLanguage();
@@ -40,14 +47,14 @@ export default function ImagineYourLatino() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {domains.map((item, i) => {
-            const Icon = DOMAIN_ICONS[i];
+            const { icon: Icon, domainColor, hover } = DOMAIN_CARDS[i];
             return (
               <motion.div
                 key={item.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="relative rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 overflow-hidden hover:border-gold/40 hover:scale-[1.02] hover:shadow-lg hover:shadow-gold/5 transition-all group"
+                className={`relative rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 overflow-hidden ${hover} hover:scale-[1.02] hover:shadow-lg hover:shadow-gold/5 transition-all group`}
               >
                 {/* Mock browser bar */}
                 <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5">
@@ -57,7 +64,7 @@ export default function ImagineYourLatino() {
                     <div className="w-[6px] h-[6px] rounded-full bg-green-500/70" />
                   </div>
                   <div className="flex-1 bg-white/5 rounded-md px-3 py-1 ml-2">
-                    <span className="font-mono text-sm text-gold">
+                    <span className={`font-mono text-sm ${domainColor}`}>
                       {item.name}
                     </span>
                   </div>
