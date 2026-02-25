@@ -10,7 +10,7 @@ import BrandShowcase from '@/components/sections/BrandShowcase';
 import Stats from '@/components/sections/Stats';
 import Timeline from '@/components/sections/Timeline';
 import Partners from '@/components/sections/Partners';
-import Testimonials from '@/components/sections/Testimonials';
+import ImagineYourLatino from '@/components/sections/ImagineYourLatino';
 import FAQ from '@/components/sections/FAQ';
 import EmailSignup from '@/components/sections/EmailSignup';
 
@@ -27,7 +27,7 @@ export default function Home() {
         <Stats />
         <Timeline />
         <Partners />
-        <Testimonials />
+        <ImagineYourLatino />
         <FAQ />
         <EmailSignup />
       </main>

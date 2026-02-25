@@ -15,6 +15,8 @@ export default function Stats() {
     prefix?: string;
     suffix: string;
     label: string;
+    description: string;
+    isText?: boolean;
   }>;
 
   return (
@@ -29,20 +31,38 @@ export default function Stats() {
           {t('stats.title')}
         </motion.h2>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {Array.isArray(items) && items.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center hover:border-gold/40 transition-colors"
             >
-              <AnimatedCounter
-                value={item.value}
-                prefix={item.prefix}
-                suffix={item.suffix}
-                label={item.label}
-              />
+              {item.isText ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.6, delay: i * 0.1 + 0.3 }}
+                  className="font-display text-5xl md:text-6xl text-gold-light"
+                >
+                  {item.value}
+                </motion.div>
+              ) : (
+                <AnimatedCounter
+                  value={item.value}
+                  prefix={item.prefix}
+                  suffix={item.suffix}
+                  label=""
+                />
+              )}
+              <p className="text-neutral-white text-lg font-semibold mt-3">
+                {item.label}
+              </p>
+              <p className="text-gray-400 text-sm mt-1">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </div>

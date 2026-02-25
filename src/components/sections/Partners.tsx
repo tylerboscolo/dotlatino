@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Globe } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
 export default function Partners() {
@@ -10,6 +11,11 @@ export default function Partners() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const names = (t('partners.names') as unknown) as string[];
+
+  const scrollToSignup = () => {
+    const el = document.getElementById('signup');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section id="partners" ref={ref} className="relative z-10 py-24 md:py-32">
@@ -35,17 +41,32 @@ export default function Partners() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="glass-card p-6 flex flex-col items-center justify-center text-center group cursor-pointer hover:scale-[1.02] transition-transform"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-gold/40 hover:scale-[1.03] transition-all"
             >
-              <span className="font-bold text-white/60 text-lg group-hover:text-gold transition-colors">
+              <Globe className="w-5 h-5 text-gold/40 mb-3 group-hover:text-gold/60 transition-colors" />
+              <span className="font-medium text-white text-sm group-hover:text-gold transition-colors">
                 {name}
-              </span>
-              <span className="text-[10px] text-gold/60 mt-2 font-bold uppercase tracking-wider">
-                {t('partners.comingSoon')}
               </span>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="text-center mt-10"
+        >
+          <p className="text-gray-400 text-sm mb-6">
+            {t('partners.morePartners')}
+          </p>
+          <button
+            onClick={scrollToSignup}
+            className="inline-flex items-center px-6 py-3 rounded-full bg-gold/10 border border-gold/30 text-gold font-semibold hover:bg-gold/20 hover:border-gold/50 transition-all"
+          >
+            {t('partners.ctaButton')}
+          </button>
+        </motion.div>
       </div>
     </section>
   );
