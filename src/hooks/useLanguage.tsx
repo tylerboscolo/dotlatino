@@ -5,9 +5,8 @@ import en from '@/locales/en.json';
 import es from '@/locales/es.json';
 
 type Language = 'en' | 'es';
-type Translations = typeof en;
 
-const translations: Record<Language, Translations> = { en, es };
+const translations: Record<Language, Record<string, string>> = { en, es };
 
 interface LanguageContextType {
   lang: Language;
@@ -16,19 +15,6 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
-
-function getNestedValue(obj: Record<string, unknown>, path: string): string {
-  const keys = path.split('.');
-  let current: unknown = obj;
-  for (const key of keys) {
-    if (current && typeof current === 'object' && key in (current as Record<string, unknown>)) {
-      current = (current as Record<string, unknown>)[key];
-    } else {
-      return path;
-    }
-  }
-  return typeof current === 'string' ? current : path;
-}
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Language>('en');
@@ -48,7 +34,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const t = useCallback((key: string): string => {
-    return getNestedValue(translations[lang] as unknown as Record<string, unknown>, key);
+    return translations[lang][key] ?? key;
   }, [lang]);
 
   return (

@@ -2,28 +2,24 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { User, ShoppingBag, Music, Heart, ChefHat, Briefcase } from 'lucide-react';
+import { User, ShoppingBag, Music, Heart, UtensilsCrossed, Briefcase } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
-const iconMap: Record<string, React.ElementType> = {
-  User,
-  ShoppingBag,
-  Music,
-  Heart,
-  ChefHat,
-  Briefcase,
-};
+const DOMAIN_ICONS = [User, ShoppingBag, Music, Heart, UtensilsCrossed, Briefcase];
 
 export default function ImagineYourLatino() {
   const { t } = useLanguage();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const domains = (t('imagine.domains') as unknown) as Array<{
-    domain: string;
-    tagline: string;
-    icon: string;
-  }>;
+  const domains = [
+    { name: t('pictureYourself.domain1.name'), tag: t('pictureYourself.domain1.tag') },
+    { name: t('pictureYourself.domain2.name'), tag: t('pictureYourself.domain2.tag') },
+    { name: t('pictureYourself.domain3.name'), tag: t('pictureYourself.domain3.tag') },
+    { name: t('pictureYourself.domain4.name'), tag: t('pictureYourself.domain4.tag') },
+    { name: t('pictureYourself.domain5.name'), tag: t('pictureYourself.domain5.tag') },
+    { name: t('pictureYourself.domain6.name'), tag: t('pictureYourself.domain6.tag') },
+  ];
 
   return (
     <section ref={ref} className="relative z-10 py-24 md:py-32">
@@ -43,15 +39,15 @@ export default function ImagineYourLatino() {
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {Array.isArray(domains) && domains.map((item, i) => {
-            const Icon = iconMap[item.icon] || User;
+          {domains.map((item, i) => {
+            const Icon = DOMAIN_ICONS[i];
             return (
               <motion.div
-                key={item.domain}
+                key={item.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:border-gold/40 hover:scale-[1.02] hover:shadow-lg hover:shadow-gold/5 transition-all group"
+                className="relative rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 overflow-hidden hover:border-gold/40 hover:scale-[1.02] hover:shadow-lg hover:shadow-gold/5 transition-all group"
               >
                 {/* Mock browser bar */}
                 <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5">
@@ -62,7 +58,7 @@ export default function ImagineYourLatino() {
                   </div>
                   <div className="flex-1 bg-white/5 rounded-md px-3 py-1 ml-2">
                     <span className="font-mono text-sm text-gold">
-                      {item.domain}
+                      {item.name}
                     </span>
                   </div>
                 </div>
@@ -71,7 +67,7 @@ export default function ImagineYourLatino() {
                 <div className="relative px-5 py-5">
                   <Icon className="absolute top-3 right-4 w-10 h-10 text-gold/10 group-hover:text-gold/20 transition-colors" />
                   <p className="text-white text-sm relative z-10">
-                    {item.tagline}
+                    {item.tag}
                   </p>
                 </div>
               </motion.div>

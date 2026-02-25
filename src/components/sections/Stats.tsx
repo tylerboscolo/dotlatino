@@ -3,21 +3,18 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
-import AnimatedCounter from '@/components/ui/AnimatedCounter';
 
 export default function Stats() {
   const { t } = useLanguage();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const items = (t('stats.items') as unknown) as Array<{
-    value: string;
-    prefix?: string;
-    suffix: string;
-    label: string;
-    description: string;
-    isText?: boolean;
-  }>;
+  const stats = [
+    { value: t('stats.stat1.value'), label: t('stats.stat1.label'), desc: t('stats.stat1.desc') },
+    { value: t('stats.stat2.value'), label: t('stats.stat2.label'), desc: t('stats.stat2.desc') },
+    { value: t('stats.stat3.value'), label: t('stats.stat3.label'), desc: t('stats.stat3.desc') },
+    { value: t('stats.stat4.value'), label: t('stats.stat4.label'), desc: t('stats.stat4.desc') },
+  ];
 
   return (
     <section ref={ref} className="relative z-10 py-24 md:py-32">
@@ -32,36 +29,22 @@ export default function Stats() {
         </motion.h2>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {Array.isArray(items) && items.map((item, i) => (
+          {stats.map((stat, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center hover:border-gold/40 transition-colors"
+              className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-gold/40 transition-all duration-300 text-center"
             >
-              {item.isText ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.6, delay: i * 0.1 + 0.3 }}
-                  className="font-display text-5xl md:text-6xl text-gold-light"
-                >
-                  {item.value}
-                </motion.div>
-              ) : (
-                <AnimatedCounter
-                  value={item.value}
-                  prefix={item.prefix}
-                  suffix={item.suffix}
-                  label=""
-                />
-              )}
+              <div className="font-display text-5xl md:text-6xl text-gold-light">
+                {stat.value}
+              </div>
               <p className="text-neutral-white text-lg font-semibold mt-3">
-                {item.label}
+                {stat.label}
               </p>
               <p className="text-gray-400 text-sm mt-1">
-                {item.description}
+                {stat.desc}
               </p>
             </motion.div>
           ))}

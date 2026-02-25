@@ -5,12 +5,12 @@ import { useRef } from 'react';
 import { Globe } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
+const PARTNER_NAMES = ['GoDaddy', 'Namecheap', 'Cloudflare', 'Name.com', 'Dynadot', 'Hover'];
+
 export default function Partners() {
   const { t } = useLanguage();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  const names = (t('partners.names') as unknown) as string[];
 
   const scrollToSignup = () => {
     const el = document.getElementById('signup');
@@ -35,13 +35,13 @@ export default function Partners() {
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {Array.isArray(names) && names.map((name, i) => (
+          {PARTNER_NAMES.map((name, i) => (
             <motion.div
               key={name}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-gold/40 hover:scale-[1.03] transition-all"
+              className="p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-gold/40 hover:scale-[1.03] transition-all"
             >
               <Globe className="w-5 h-5 text-gold/40 mb-3 group-hover:text-gold/60 transition-colors" />
               <span className="font-medium text-white text-sm group-hover:text-gold transition-colors">
@@ -58,7 +58,7 @@ export default function Partners() {
           className="text-center mt-10"
         >
           <p className="text-gray-400 text-sm mb-6">
-            {t('partners.morePartners')}
+            {t('partners.note')}
           </p>
           <button
             onClick={scrollToSignup}

@@ -12,11 +12,12 @@ export default function WhoIsItFor() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const audiences = (t('who.audiences') as unknown) as Array<{
-    title: string;
-    description: string;
-    examples: string;
-  }>;
+  const audiences = [
+    { title: t('whoIsItFor.audience1.title'), desc: t('whoIsItFor.audience1.desc'), domains: t('whoIsItFor.audience1.domains') },
+    { title: t('whoIsItFor.audience2.title'), desc: t('whoIsItFor.audience2.desc'), domains: t('whoIsItFor.audience2.domains') },
+    { title: t('whoIsItFor.audience3.title'), desc: t('whoIsItFor.audience3.desc'), domains: t('whoIsItFor.audience3.domains') },
+    { title: t('whoIsItFor.audience4.title'), desc: t('whoIsItFor.audience4.desc'), domains: t('whoIsItFor.audience4.domains') },
+  ];
 
   return (
     <section id="who" ref={ref} className="relative z-10 py-24 md:py-32">
@@ -36,7 +37,7 @@ export default function WhoIsItFor() {
         </motion.div>
 
         <div className="space-y-12">
-          {Array.isArray(audiences) && audiences.map((audience, i) => {
+          {audiences.map((audience, i) => {
             const Icon = icons[i];
             const isReversed = i % 2 === 1;
 
@@ -46,7 +47,7 @@ export default function WhoIsItFor() {
                 initial={{ opacity: 0, x: isReversed ? 30 : -30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className={`glass-card p-8 md:p-10 flex flex-col md:flex-row items-start gap-6 ${
+                className={`p-8 md:p-10 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-gold/40 transition-all duration-300 flex flex-col md:flex-row items-start gap-6 ${
                   isReversed ? 'md:flex-row-reverse' : ''
                 }`}
               >
@@ -58,11 +59,11 @@ export default function WhoIsItFor() {
                     {audience.title}
                   </h3>
                   <p className="text-[#D1C9B8] leading-relaxed mb-4">
-                    {audience.description}
+                    {audience.desc}
                   </p>
                   <div className="inline-flex items-center gap-2 bg-gold/5 border border-gold/20 rounded-lg px-4 py-2">
                     <span className="text-gold-light font-display text-sm font-bold">
-                      {audience.examples}
+                      {audience.domains}
                     </span>
                   </div>
                 </div>
