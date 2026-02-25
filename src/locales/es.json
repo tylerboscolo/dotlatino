@@ -1,0 +1,230 @@
+{
+  "nav": {
+    "why": "Por Qué .latino",
+    "who": "Para Quién Es",
+    "timeline": "Cronología",
+    "partners": "Socios",
+    "faq": "Preguntas",
+    "getNotified": "Recibe Notificaciones"
+  },
+  "hero": {
+    "eyebrow": "EL NUEVO HOGAR DIGITAL DE LA IDENTIDAD LATINA",
+    "headline": "Tu cultura. Tu dominio.",
+    "subhead": ".latino es el nuevo dominio de nivel superior creado para la comunidad latina en todo el mundo. Reclama tu espacio en internet que habla tu idioma, representa tu herencia y amplifica tu voz.",
+    "cta1": "Recibe Notificaciones",
+    "cta2": "Conoce Más"
+  },
+  "marquee": {
+    "strip1": "TU IDENTIDAD EN .LATINO",
+    "strip2": "PRÓXIMAMENTE"
+  },
+  "why": {
+    "title": "¿Por qué .latino?",
+    "subtitle": "Más que un dominio — es una declaración digital de identidad.",
+    "cards": [
+      {
+        "title": "Identidad Cultural",
+        "description": "Un dominio que señala instantáneamente herencia, cultura y comunidad latina. Tu URL se convierte en una declaración."
+      },
+      {
+        "title": "Ventaja SEO",
+        "description": "Destaca en los resultados de búsqueda con un dominio memorable y rico en palabras clave que le dice al mundo exactamente quién eres."
+      },
+      {
+        "title": "Confianza Comunitaria",
+        "description": "Únete a una red de negocios, creadores y organizaciones latinas construyendo juntos el futuro digital."
+      },
+      {
+        "title": "Bilingüe por Naturaleza",
+        "description": "Perfecto para sitios en inglés, español, portugués y multilingües — .latino trasciende fronteras e idiomas."
+      },
+      {
+        "title": "Autoridad de Marca",
+        "description": "Diferencia tu marca con un dominio que tiene peso cultural y credibilidad moderna."
+      },
+      {
+        "title": "Seguridad Integrada",
+        "description": "Cada dominio .latino incluye soporte HTTPS y estándares de seguridad modernos desde el primer día."
+      }
+    ]
+  },
+  "who": {
+    "title": "¿Para quién es .latino?",
+    "subtitle": "Ya sea que estés construyendo una marca, un movimiento o una comunidad — .latino es tu hogar digital.",
+    "audiences": [
+      {
+        "title": "Negocios Latinos",
+        "description": "De bodegas a startups de tecnología — .latino les dice a tus clientes que eres parte de la comunidad antes de que hagan clic.",
+        "examples": "mibodega.latino · tutienda.latino"
+      },
+      {
+        "title": "Creadores e Influencers",
+        "description": "Músicos, artistas, chefs, podcasters — tu dominio debe ser tan memorable como tu contenido.",
+        "examples": "cocina.latino · musica.latino"
+      },
+      {
+        "title": "ONGs y Organizaciones Comunitarias",
+        "description": "Sirve a la comunidad con un dominio que la comunidad reconoce y confía.",
+        "examples": "fundacion.latino · ayuda.latino"
+      },
+      {
+        "title": "Medios y Publicaciones",
+        "description": "Noticias, revistas, podcasts — llega a los 60M+ latinos en EE.UU. y 650M+ en el mundo con un dominio que resuena.",
+        "examples": "noticias.latino · cultura.latino"
+      }
+    ]
+  },
+  "brands": {
+    "title": "Imagina las posibilidades",
+    "subtitle": "Dominios .latino premium para cada industria y pasión."
+  },
+  "stats": {
+    "title": "La comunidad latina en números",
+    "items": [
+      { "value": "63", "suffix": "M+", "label": "Latinos en Estados Unidos" },
+      { "value": "580", "suffix": "M+", "label": "Hispanohablantes en el mundo" },
+      { "value": "3.4", "prefix": "$", "suffix": "T", "label": "Poder adquisitivo latino en EE.UU." },
+      { "value": "4.7", "suffix": "M+", "label": "Negocios propiedad de latinos" }
+    ]
+  },
+  "timeline": {
+    "title": "El camino hacia .latino",
+    "subtitle": "El registro se abre en fases — regístrate para ser el primero en la fila.",
+    "datesNote": "Fechas Por Anunciar",
+    "phases": [
+      {
+        "phase": "Fase 1",
+        "name": "Sunrise de Marcas",
+        "description": "Registro prioritario para titulares de marcas registradas",
+        "status": "Próximamente"
+      },
+      {
+        "phase": "Fase 2",
+        "name": "Acceso Anticipado",
+        "description": "Socios seleccionados y líderes comunitarios",
+        "status": "Próximamente"
+      },
+      {
+        "phase": "Fase 3",
+        "name": "Registro Limitado",
+        "description": "Abierto a solicitantes calificados",
+        "status": "Próximamente"
+      },
+      {
+        "phase": "Fase 4",
+        "name": "Disponibilidad General",
+        "description": "Registro abierto para todos",
+        "status": "Próximamente"
+      }
+    ]
+  },
+  "partners": {
+    "title": "Obtén tu dominio .latino de socios de confianza",
+    "subtitle": "Cuando se abra el registro, podrás registrar tu dominio .latino a través de estos registradores acreditados.",
+    "comingSoon": "Próximamente",
+    "names": ["GoDaddy", "Namecheap", "Google Domains", "Cloudflare", "Name.com", "Hover"]
+  },
+  "testimonials": {
+    "title": "Voces de la comunidad",
+    "items": [
+      {
+        "quote": "Un dominio .latino es más que una dirección web — es una declaración cultural. Le dice al mundo que estamos aquí, estamos orgullosos y estamos construyendo algo significativo.",
+        "name": "Maria Santos",
+        "role": "Fundadora, LatinoTech Collective",
+        "domain": "tech.latino"
+      },
+      {
+        "quote": "Para nuestro restaurante, tener cocina.latino les diría instantáneamente a nuestros clientes de qué se trata. Es marketing integrado en la URL.",
+        "name": "Carlos Rivera",
+        "role": "Chef y Restaurador",
+        "domain": "cocina.latino"
+      },
+      {
+        "quote": "Como organización sin fines de lucro que sirve a la comunidad latina, un dominio .latino nos da credibilidad y reconocimiento instantáneo. Nuestra comunidad ve la URL y sabe que somos uno de ellos.",
+        "name": "Ana Gutierrez",
+        "role": "Directora, Comunidad Unida",
+        "domain": "comunidad.latino"
+      },
+      {
+        "quote": "El TLD .latino es un cambio de juego para los creadores latinos. No es solo un dominio — es un movimiento hacia la soberanía digital de nuestra comunidad.",
+        "name": "Diego Morales",
+        "role": "Productor de Medios Digitales",
+        "domain": "cultura.latino"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "question": "¿Qué es .latino?",
+        "answer": ".latino es un nuevo dominio de nivel superior (TLD) diseñado específicamente para la comunidad latina global. Como .com o .org, es la terminación de una dirección web — pero .latino señala instantáneamente identidad cultural, herencia y conexión comunitaria."
+      },
+      {
+        "question": "¿Quién puede registrar un dominio .latino?",
+        "answer": ".latino está abierto a cualquier persona que se identifique con o sirva a la comunidad latina — negocios, creadores, organizaciones sin fines de lucro, medios de comunicación e individuos en todo el mundo. No hay restricciones geográficas."
+      },
+      {
+        "question": "¿Cuándo estarán disponibles los dominios .latino?",
+        "answer": "Actualmente estamos en la fase de pre-lanzamiento. El registro se abrirá en fases — comenzando con un período Sunrise de Marcas, seguido de Acceso Anticipado, Registro Limitado y finalmente Disponibilidad General. Regístrate para recibir notificaciones y ser el primero en la fila."
+      },
+      {
+        "question": "¿Cuánto costará un dominio .latino?",
+        "answer": "Los precios variarán según el registrador y se anunciarán más cerca del lanzamiento. Regístrate en nuestra lista de correo para recibir detalles de precios tan pronto como estén disponibles."
+      },
+      {
+        "question": "¿Puedo usar .latino para un sitio web en cualquier idioma?",
+        "answer": "Absolutamente. Aunque .latino celebra la herencia latina, tu sitio web puede estar en cualquier idioma — inglés, español, portugués o cualquier otro. El dominio representa identidad, no limitación de idioma."
+      },
+      {
+        "question": "¿En qué se diferencia .latino de .lat?",
+        "answer": "Mientras que .lat sirve a la región latinoamericana en general, .latino está diseñado específicamente para la comunidad latina global y la diáspora — incluyendo los 63M+ latinos en Estados Unidos, América Latina y en cualquier lugar que los latinos llamen hogar."
+      },
+      {
+        "question": "¿Los dominios .latino incluirán HTTPS?",
+        "answer": "Sí. Todos los dominios .latino soportan estándares modernos de encriptación HTTPS, asegurando que tu sitio web sea seguro y confiable desde el primer día."
+      },
+      {
+        "question": "¿Dónde puedo registrar mi dominio .latino?",
+        "answer": "Cuando se abra el registro, los dominios .latino estarán disponibles a través de registradores importantes incluyendo GoDaddy, Namecheap y otros. Vuelve aquí o regístrate para recibir notificaciones."
+      },
+      {
+        "question": "¿Puedo transferir un dominio existente a .latino?",
+        "answer": "Una vez que .latino esté en vivo, se aplicarán los procesos estándar de transferencia de dominios. Contacta a tu registrador para detalles específicos."
+      },
+      {
+        "question": "¿Quién opera el registro .latino?",
+        "answer": ".latino es operado por Dish DBS Corporation. Para consultas a nivel de registro, contáctanos."
+      }
+    ]
+  },
+  "email": {
+    "title": "Sé el primero en la fila",
+    "subtitle": "Recibe notificaciones cuando se abra el registro de .latino. Los suscriptores tempranos obtienen acceso prioritario y precios exclusivos de lanzamiento.",
+    "placeholder": "Tu correo electrónico",
+    "button": "Notifícame",
+    "privacy": "Respetamos tu privacidad. Cancela en cualquier momento.",
+    "success": "¡Estás en la lista!",
+    "error": "Algo salió mal. Por favor intenta de nuevo.",
+    "invalid": "Por favor ingresa un correo electrónico válido."
+  },
+  "footer": {
+    "description": "El nuevo dominio de nivel superior para la comunidad latina global.",
+    "links": {
+      "why": "Por Qué .latino",
+      "who": "Para Quién Es",
+      "timeline": "Cronología",
+      "partners": "Socios",
+      "faq": "Preguntas",
+      "contact": "Contacto"
+    },
+    "legal": {
+      "privacy": "Política de Privacidad",
+      "terms": "Términos y Condiciones",
+      "abuse": "Reportar Abuso"
+    },
+    "contact": "help@get.latino",
+    "registry": "Un dominio de Dish DBS Corporation",
+    "copyright": "© 2026 .latino Registry. Todos los Derechos Reservados."
+  }
+}

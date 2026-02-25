@@ -3,21 +3,80 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --gold: #D4A843;
+  --gold-light: #E8C96A;
+  --gold-dark: #B8862E;
+  --teal: #1A9E8F;
+  --teal-light: #2CC4B3;
+  --teal-dark: #147A6E;
+  --orange: #E07A3A;
+  --orange-light: #F09A5E;
+  --purple: #8B3A8B;
+  --purple-light: #A855A8;
+  --magenta: #C44B8B;
+  --bg-dark: #0D1B2A;
+  --bg-dark-mid: #132B3E;
+  --bg-teal-dark: #0A3D3D;
+  --bg-warm: #1A1A2E;
+  --white: #FAFAFA;
+  --gray-100: #F0EDE8;
+  --gray-400: #9CA3AF;
+  --gray-700: #374151;
+  --black: #0A0A0A;
+  --text-primary: #FAFAFA;
+  --text-secondary: #D1C9B8;
+  --text-accent: #E8C96A;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-dark-mid) 30%, var(--bg-teal-dark) 70%, var(--bg-dark) 100%);
+  background-attachment: fixed;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Indigenous geometric pattern overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4A843' stroke-width='0.5'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z'/%3E%3Cpath d='M30 10 L50 30 L30 50 L10 30Z'/%3E%3Cpath d='M30 20 L40 30 L30 40 L20 30Z'/%3E%3Cpath d='M0 0 L15 15 M45 15 L60 0 M60 60 L45 45 M15 45 L0 60'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+/* Frosted glass card utility */
+@layer components {
+  .glass-card {
+    @apply relative rounded-2xl border border-gold/15 backdrop-blur-md;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .glass-card:hover {
+    @apply border-gold/40;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @layer utilities {
