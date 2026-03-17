@@ -24,6 +24,7 @@ const legalLinks: { key: string; href: string; external?: boolean }[] = [
   { key: 'footer.legal.launchPlan', href: '/latino-launch-plan.pdf', external: true },
   { key: 'footer.legal.sunriseDispute', href: '/latino-sunrise-dispute-resolution-policy.pdf', external: true },
   { key: 'footer.legal.acceptableUse', href: '/latino-acceptable-use-policy.pdf', external: true },
+  { key: 'footer.legal.abuse', href: '/abuse' },
 ];
 
 export default function Footer() {

@@ -133,6 +133,17 @@
   "email.error": "Algo salió mal. Por favor intenta de nuevo.",
   "email.invalid": "Por favor ingresa un correo electrónico válido.",
 
+  "abuse.backHome": "Volver al Inicio",
+  "abuse.title": "Reporte de Abuso",
+  "abuse.subtitle": "Ayudanos a mantener internet seguro. Si notas cualquier abuso o actividad sospechosa con un dominio .latino, reportalo aqui.",
+  "abuse.nameLabel": "Nombre",
+  "abuse.emailLabel": "Correo Electronico",
+  "abuse.messageLabel": "Mensaje",
+  "abuse.consent": "Consiento el uso de mis datos personales para investigar y responder a este reporte, segun lo descrito en la Politica de Privacidad. Entiendo que puedo retirar mi consentimiento en cualquier momento.",
+  "abuse.submit": "Enviar Reporte",
+  "abuse.successTitle": "Reporte Enviado",
+  "abuse.successDesc": "Gracias por tu reporte. Nuestro equipo revisara los detalles y tomara las medidas apropiadas. Es posible que recibas un correo de seguimiento si necesitamos informacion adicional.",
+
   "footer.description": "El nuevo dominio de nivel superior para la comunidad latina global.",
   "footer.links.why": "Por Qué .latino",
   "footer.links.who": "Para Quién Es",

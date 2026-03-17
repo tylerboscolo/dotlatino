@@ -133,6 +133,17 @@
   "email.error": "Something went wrong. Please try again.",
   "email.invalid": "Please enter a valid email address.",
 
+  "abuse.backHome": "Back to Home",
+  "abuse.title": "Report Abuse",
+  "abuse.subtitle": "Help us keep the internet safe. If you notice any abuse or suspicious activity involving a .latino domain, please report it here.",
+  "abuse.nameLabel": "Name",
+  "abuse.emailLabel": "Email",
+  "abuse.messageLabel": "Message",
+  "abuse.consent": "I consent to the use of my personal data for the purpose of investigating and responding to this report, as described in the Privacy Policy. I understand I may withdraw my consent at any time.",
+  "abuse.submit": "Submit Report",
+  "abuse.successTitle": "Report Submitted",
+  "abuse.successDesc": "Thank you for your report. Our team will review the details and take appropriate action. You may receive a follow-up email if we need additional information.",
+
   "footer.description": "The new top-level domain for the global Latino community.",
   "footer.links.why": "Why .latino",
   "footer.links.who": "Who It's For",
