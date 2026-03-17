@@ -20,10 +20,13 @@ const footerNavLinks = [
   { key: 'footer.links.contact', href: '#' },
 ];
 
-const legalLinks = [
+const legalLinks: { key: string; href: string; external?: boolean }[] = [
   { key: 'footer.legal.privacy', href: '#' },
   { key: 'footer.legal.terms', href: '#' },
   { key: 'footer.legal.abuse', href: '#' },
+  { key: 'footer.legal.launchPlan', href: '/latino-launch-plan.pdf', external: true },
+  { key: 'footer.legal.sunriseDispute', href: '/latino-sunrise-dispute-resolution-policy.pdf', external: true },
+  { key: 'footer.legal.acceptableUse', href: '/latino-acceptable-use-policy.pdf', external: true },
 ];
 
 export default function Footer() {
@@ -82,6 +85,7 @@ export default function Footer() {
                 <li key={link.key}>
                   <a
                     href={link.href}
+                    {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                     className="text-sm text-[#D1C9B8] hover:text-gold transition-colors"
                   >
                     {t(link.key)}
