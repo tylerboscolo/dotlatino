@@ -60,17 +60,17 @@ export default function Timeline() {
                     <div className={`w-4 h-4 rounded-full ${dotColors[i].bg} ${dotColors[i].shadow}`} />
                   </div>
 
-                  <div className={`p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:${dotColors[i].border} transition-all duration-300 text-center`}>
+                  <div className={`p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:${dotColors[i].border} transition-all duration-300 text-center h-full flex flex-col`}>
                     <span className="text-gold text-xs font-bold uppercase tracking-wider">
                       {phase.label}
                     </span>
                     <h3 className="font-display text-lg font-bold text-neutral-white mt-2 mb-2">
                       {phase.name}
                     </h3>
-                    <p className="text-[#D1C9B8] text-sm mb-4">
+                    <p className="text-[#D1C9B8] text-sm mb-4 flex-1">
                       {phase.desc}
                     </p>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-bold animate-pulse">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-bold animate-pulse self-center">
                       {comingSoon}
                     </span>
                   </div>
